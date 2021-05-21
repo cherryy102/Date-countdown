@@ -25,8 +25,7 @@ const getDate = () => {
     }
 }
 document.querySelector('button').addEventListener('click', getDate);
-
-setInterval(() => {
+const countdown = () => {
     const nowDate = new Date().getTime();
     let days = Math.floor((endDate / (1000 * 60 * 60 * 24)) - (nowDate / (1000 * 60 * 60 * 24)));
     let hours = Math.floor(((endDate / (1000 * 60 * 60)) - (nowDate / (1000 * 60 * 60))) % 24);
@@ -41,4 +40,6 @@ setInterval(() => {
         spanMinutes.innerHTML = `<p class='time'>${minutes} <span class='text'>minutes</span> </p> `;
         spanSeconds.innerHTML = `<p class='time'>${seconds} <span class='text'>seconds</span></p> `;
     }
-}, 1000);
+}
+countdown();
+setInterval(countdown, 1000);
