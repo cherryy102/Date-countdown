@@ -5,7 +5,6 @@ const spanSeconds = document.querySelector('.seconds');
 const date = document.querySelector('.dateValue');
 const time = document.querySelector('.timeValue');
 
-
 let endDate;
 if (localStorage.getItem('endDate')) {
     endDate = localStorage.getItem('endDate');
