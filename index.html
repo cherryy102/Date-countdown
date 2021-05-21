@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to the selected date</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="setting">
+        <div class="icon"><i class="fas fa-cog"></i></div>
+        <div class="menu">
+            <p>Enter an end date:</p>
+            <input type="date" class="dateValue" required><span class="validity"></span>
+            <input type="time" class="timeValue" required><span class="validity"></span>
+            <span class="error"></span>
+            <button>Set</button>
+        </div>
+    </div>
+    <h1 class="timer">
+        <div class="days"></div>
+        <div class="hours"></div>
+        <div class="minutes"></div>
+        <div class="seconds"></div>
+    </h1>
+    <script src="js/countdown.js"></script>
+    <script src="js/setting.js"></script>
+</body>
+
+</html>
