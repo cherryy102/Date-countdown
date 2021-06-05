@@ -1,18 +1,11 @@
-const spanDays = document.querySelector('.days');
-const spanHours = document.querySelector('.hours');
-const spanMinutes = document.querySelector('.minutes');
-const spanSeconds = document.querySelector('.seconds');
-const date = document.querySelector('.dateValue');
-const time = document.querySelector('.timeValue');
 let endDate;
 if (localStorage.getItem('endDate')) {
     endDate = localStorage.getItem('endDate');
 }
 const getDate = () => {
-    let userDate = date.value;
-    let userTime = time.value;
-    let endUserData;
-    endUserData = `${userDate} ${userTime}`;
+    const userDate = document.querySelector('.dateValue').value;
+    const userTime = document.querySelector('.timeValue').value;
+    const endUserData = `${userDate} ${userTime}`;
     if (userDate != '' && userTime != '') {
         document.querySelector('.error').textContent = "";
         endDate = new Date(`${endUserData}`).getTime();
@@ -32,10 +25,10 @@ const countdown = () => {
     const seconds = Math.floor(Math.abs(((endDate / (1000)) - (nowDate / (1000))) % 60));
     const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
     if (endDate) {
-        spanDays.innerHTML = `<p class='time'>${days} <span class='text'>days </span></p> `;
-        spanHours.innerHTML = `<p class='time'>${displayHours} <span class='text'>hours</span> </p> `;
-        spanMinutes.innerHTML = `<p class='time'>${displayMinutes} <span class='text'>minutes</span> </p> `;
-        spanSeconds.innerHTML = `<p class='time'>${displaySeconds} <span class='text'>seconds</span></p> `;
+        document.querySelector('.days').innerHTML = `<p class='time'>${days} <span class='text'>days </span></p> `;
+        document.querySelector('.hours').innerHTML = `<p class='time'>${displayHours} <span class='text'>hours</span> </p> `;
+        document.querySelector('.minutes').innerHTML = `<p class='time'>${displayMinutes} <span class='text'>minutes</span> </p> `;
+        document.querySelector('.seconds').innerHTML = `<p class='time'>${displaySeconds} <span class='text'>seconds</span></p> `;
     }
 }
 countdown();
