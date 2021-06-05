@@ -26,11 +26,11 @@ const countdown = () => {
     const nowDate = new Date().getTime();
     const days = Math.floor(Math.abs((endDate / (1000 * 60 * 60 * 24)) - (nowDate / (1000 * 60 * 60 * 24))));
     let hours = Math.floor(Math.abs(((endDate / (1000 * 60 * 60)) - (nowDate / (1000 * 60 * 60))) % 24));
-    let displayHours = hours < 10 ? `0${hours}` : hours;
+    const displayHours = hours < 10 ? `0${hours}` : hours;
     let minutes = Math.floor(Math.abs(((endDate / (1000 * 60)) - (nowDate / (1000 * 60))) % 60));
-    let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
     let seconds = Math.floor(Math.abs(((endDate / (1000)) - (nowDate / (1000))) % 60));
-    let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+    const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
     if (endDate) {
         spanDays.innerHTML = `<p class='time'>${days} <span class='text'>days </span></p> `;
         spanHours.innerHTML = `<p class='time'>${displayHours} <span class='text'>hours</span> </p> `;
