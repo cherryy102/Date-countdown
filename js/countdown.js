@@ -12,7 +12,6 @@ const getDate = () => {
     let userDate = date.value;
     let userTime = time.value;
     let endUserData;
-    console.log(userDate);
     endUserData = `${userDate} ${userTime}`;
     if (userDate != '' && userTime != '') {
         document.querySelector('.error').textContent = "";
@@ -28,12 +27,12 @@ const addZero = (number) => {
 document.querySelector('button').addEventListener('click', getDate);
 const countdown = () => {
     const nowDate = new Date().getTime();
-    const days = Math.floor((endDate / (1000 * 60 * 60 * 24)) - (nowDate / (1000 * 60 * 60 * 24)));
-    let hours = Math.floor(((endDate / (1000 * 60 * 60)) - (nowDate / (1000 * 60 * 60))) % 24);
+    const days = Math.floor(Math.abs((endDate / (1000 * 60 * 60 * 24)) - (nowDate / (1000 * 60 * 60 * 24))));
+    let hours = Math.floor(Math.abs(((endDate / (1000 * 60 * 60)) - (nowDate / (1000 * 60 * 60))) % 24));
     let displayHours = hours < 10 ? `0${hours}` : hours;
-    let minutes = Math.floor(((endDate / (1000 * 60)) - (nowDate / (1000 * 60))) % 60);
+    let minutes = Math.floor(Math.abs(((endDate / (1000 * 60)) - (nowDate / (1000 * 60))) % 60));
     let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
-    let seconds = Math.floor(((endDate / (1000)) - (nowDate / (1000))) % 60);
+    let seconds = Math.floor(Math.abs(((endDate / (1000)) - (nowDate / (1000))) % 60));
     let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
     // seconds = seconds < 10 ? `0${seconds}` : seconds;
     if (endDate) {
