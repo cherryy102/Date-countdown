@@ -21,9 +21,6 @@ const getDate = () => {
         document.querySelector('.error').textContent = "Fields cannot be empty!";
     }
 }
-const addZero = (number) => {
-    number < 10 ? `0${number}` : number;
-}
 document.querySelector('button').addEventListener('click', getDate);
 const countdown = () => {
     const nowDate = new Date().getTime();
