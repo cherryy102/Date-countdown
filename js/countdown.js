@@ -34,7 +34,6 @@ const countdown = () => {
     let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
     let seconds = Math.floor(Math.abs(((endDate / (1000)) - (nowDate / (1000))) % 60));
     let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
-    // seconds = seconds < 10 ? `0${seconds}` : seconds;
     if (endDate) {
         spanDays.innerHTML = `<p class='time'>${days} <span class='text'>days </span></p> `;
         spanHours.innerHTML = `<p class='time'>${displayHours} <span class='text'>hours</span> </p> `;
